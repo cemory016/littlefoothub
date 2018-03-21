@@ -4,7 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "concurrently \"nodemon server.js\" \"cd ./client  && npm start \" ",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "postinstall": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
@@ -16,7 +19,11 @@
     "dotenv": "^5.0.1",
     "express": "^4.16.3",
     "mongoose": "^5.0.11",
+    "npm": "^5.7.1",
     "react-router-dom": "^4.2.2",
     "styled-components": "^3.2.3"
+  },
+  "engines": {
+    "node": "9.7.0"
   }
 }
